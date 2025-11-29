@@ -1,5 +1,162 @@
 :root {
-  --blue-pacific: #2d4e5c;
-  --blue: #48aee6;
-  --white: #f3f3f3;
+  --bleu-foncer: #0a2533;
+  --bleu-plus-clair: #0c2e40;
+  --bleu-clair: #146c94;
+  --red-doux: #d9534f;
+  --white-doux: #f3f3f3;
 }
+/* ---------- Global ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: var(--bleu-plus-clair);
+  color: #eaf4f4; /* Blanc cassé élégant */
+}
+
+main {
+  padding-top: 110px;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  position: fixed;
+  top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 999;
+}
+.navbar-container {
+  width: 90%;
+  max-width: 1200px;
+  height: 70px;
+  background-color: var(--bleu-foncer); /* Bleu foncé navbar */
+  padding: 0 35px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+}
+/* Left navbar */
+.brand {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.brand .initial {
+  color: var(--red-doux); /* Rouge doux / accent */
+}
+/* Liens navbar */
+.navbar-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.navbar-links a {
+  text-decoration: none;
+  color: var(--white-doux);
+  font-weight: 500;
+  position: relative;
+  transition: 0.2s;
+}
+.navbar-links a:hover {
+  color: var(--red-doux);
+}
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -6px;
+  left: 0;
+  background-color: var(--red-doux);
+  transition: width 0.2s ease;
+}
+.navbar-links a:hover::after {
+  width: 100%;
+}
+/* ---------- HERO ---------- */
+.hero {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 80px;
+  position: relative;
+}
+/* Texte */
+.hero-left {
+  width: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 3.6rem;
+  font-weight: 700;
+  margin: 0 0 18px;
+  color: var(--white-doux);
+}
+.hero-title span {
+  color: var(--red-doux);
+}
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+.hero-subtitle span {
+  color: var(--red-doux);
+}
+
+.hero-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 32px;
+  color: var(--white-doux);
+}
+/* Boutons */
+.hero-buttons {
+  display: flex;
+  gap: 18px;
+}
+.btn {
+  padding: 12px 30px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--white-doux);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: 0.2s;
+  background-color: var(--bleu-clair); /* Bleu clair boutons */
+}
+.btn:hover {
+  background-color: var(--red-doux); /* Rouge hover */
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+  transform: translateY(-2px);
+}
+/* ---------- PHOTO ---------- */
+.hero-right {
+  width: 50%;
+  position: relative;
+  z-index: 2;
+}
+.photo-wrapper {
+  width: 900px;
+  height: 900px;
+  overflow: hidden;
+  position: relative;
+}
+.photo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Qui je suis ? */
