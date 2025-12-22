@@ -672,3 +672,74 @@ main {
     grid-column: auto;
   }
 }
+/* ---------- Contact ---------- */
+
+.contact-section {
+  padding: 120px 20px 140px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+}
+
+.contact-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #eaf4f4;
+}
+
+.contact-underline {
+  display: block;
+  margin: 10px auto 0;
+  width: 90px;
+  height: 3px;
+  border-radius: 999px;
+  background-color: #d9534f;
+}
+
+.contact-text {
+  margin: 28px auto 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(234, 244, 244, 0.9);
+}
+
+.contact-actions {
+  margin-top: 36px;
+}
+
+/* Bouton email */
+.contact-button {
+  display: inline-block;
+  padding: 14px 34px;
+  border-radius: 999px;
+  background-color: #146c94;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background-color 0.2s;
+}
+
+.contact-button:hover {
+  background-color: #d9534f;
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* Email affiché */
+.contact-email {
+  margin-top: 18px;
+  font-size: 0.95rem;
+  color: rgba(234, 244, 244, 0.75);
+}
+
+.contact-email span {
+  color: #eaf4f4;
+  font-weight: 500;
+}
