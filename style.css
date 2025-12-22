@@ -561,3 +561,114 @@ main {
     grid-template-columns: 1fr;
   }
 }
+/* ---------- Passions ---------- */
+
+.passions-section {
+  padding: 120px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.passions-container {
+  width: 100%;
+  max-width: 1100px;
+}
+
+.passions-header h2 {
+  margin: 0;
+  font-size: 3rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #eaf4f4;
+}
+
+.passions-underline {
+  display: block;
+  margin-top: 10px;
+  width: 90px;
+  height: 3px;
+  border-radius: 999px;
+  background-color: #d9534f;
+}
+
+.passions-intro {
+  margin: 18px 0 0;
+  max-width: 720px;
+  color: rgba(234, 244, 244, 0.85);
+  line-height: 1.7;
+}
+
+/* Grille */
+.passions-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* Carte */
+.passion-card {
+  border-radius: 22px;
+  padding: 24px 24px;
+  background: linear-gradient(
+    135deg,
+    rgba(7, 64, 90, 0.85),
+    rgba(12, 47, 58, 0.65)
+  );
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(234, 244, 244, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.passion-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.55);
+}
+
+/* Haut de carte */
+.passion-card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.passion-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(217, 83, 79, 0.14);
+  border: 1px solid rgba(217, 83, 79, 0.25);
+  font-size: 1.2rem;
+}
+
+.passion-card h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #eaf4f4;
+}
+
+.passion-card p {
+  margin: 0;
+  color: rgba(234, 244, 244, 0.9);
+  line-height: 1.7;
+}
+
+/* Carte large (sur 2 colonnes) */
+.passion-card-wide {
+  grid-column: 1 / -1;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .passions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .passion-card-wide {
+    grid-column: auto;
+  }
+}
