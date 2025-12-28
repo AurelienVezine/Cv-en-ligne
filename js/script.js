@@ -19,27 +19,40 @@ if (burger && navLinks && navbarContainer) {
     navLinks.classList.contains("is-open") ? closeMenu() : openMenu();
   };
 
-  // ✅ Le bouton burger uniquement
+  // Burger
   burger.addEventListener("click", (e) => {
     e.preventDefault();
     e.stopPropagation();
     toggleMenu();
   });
 
-  // ✅ Clique/tap en dehors => ferme
-  document.addEventListener("pointerdown", (e) => {
+  // Tap dehors => ferme
+  document.addEventListener("click", (e) => {
     if (!navbarContainer.contains(e.target)) closeMenu();
   });
 
-  // ✅ Clique sur un lien => laisse naviguer puis ferme
-  navLinks.querySelectorAll("a").forEach((a) => {
-    a.addEventListener("click", () => {
-      // on ferme après que le navigateur ait géré l’ancre
-      setTimeout(closeMenu, 0);
+  // ✅ Liens : on force le scroll (Safari iOS friendly)
+  navLinks.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener("click", (e) => {
+      e.preventDefault(); // on gère nous-même
+
+      const targetId = a.getAttribute("href");
+      const target = document.querySelector(targetId);
+
+      closeMenu();
+
+      if (target) {
+        // petit delay pour laisser le menu se fermer
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+          // option : mettre à jour l'URL
+          history.pushState(null, "", targetId);
+        }, 50);
+      }
     });
   });
 
-  // ✅ ESC
+  // ESC
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeMenu();
   });
