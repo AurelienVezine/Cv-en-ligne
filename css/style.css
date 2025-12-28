@@ -726,7 +726,7 @@ main {
   /* Navbar -> burger */
   .burger {
     display: inline-flex;
-    z-index: 1001;
+    z-index: 2000;
     touch-action: manipulation; /* améliore les taps */
     -webkit-tap-highlight-color: transparent;
     pointer-events: auto;
@@ -747,7 +747,7 @@ main {
     border: 1px solid rgba(243, 243, 243, 0.08);
     flex-direction: column;
     gap: 0;
-    z-index: 1000;
+    z-index: 1500;
   }
 
   .navbar-links.is-open {
