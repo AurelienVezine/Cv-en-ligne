@@ -20,8 +20,6 @@ if (burger && navLinks) {
     const isOpen = navLinks.classList.contains("is-open");
     isOpen ? closeMenu() : openMenu();
   };
-  console.log("burger tap/click OK");
-
   // ✅ 1) Tactile (le plus fiable sur mobile)
   burger.addEventListener(
     "touchstart",
