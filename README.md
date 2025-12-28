@@ -1,74 +1,79 @@
-# Portfolio – Aurélien Vézine
+# Cv-en-ligne — Portfolio personnel
 
-Site web personnel / portfolio présentant mon parcours, mes compétences et mes centres d’intérêt.
+Portfolio web personnel présentant mon parcours, mes compétences et mes centres d’intérêt.
 
-Ce projet a pour objectif de proposer une vitrine claire et moderne de mon profil, à la fois humain, technique et polyvalent.
+Ce site a été conçu comme une vitrine simple, moderne et lisible de mon profil, en mettant l’accent sur l’humain, la polyvalence et la clarté de l’information.
 
 ---
 
 ## 🧭 Présentation
 
-Ce site met en avant :
+Ce projet a pour objectif de regrouper, en un seul site :
 
 - Mon parcours professionnel et mes formations
 - Mes compétences techniques et de terrain
 - Mes centres d’intérêt et engagements personnels
 - Un moyen de contact simple et sécurisé
 
-Le projet a été conçu sans framework, avec une attention particulière portée à :
-- la lisibilité
-- la performance
-- le responsive (mobile / tablette / desktop)
-- l’accessibilité
-- l’expérience utilisateur
+Le site est volontairement **statique**, sans backend ni base de données, afin de garantir :
+- de bonnes performances
+- une excellente compatibilité mobile
+- une sécurité maximale
+- une maintenance minimale
 
 ---
 
 ## 🛠️ Technologies utilisées
 
-- **HTML5** – structure sémantique
-- **CSS3** – design, responsive, animations légères
-- **JavaScript** – interactions (menu mobile, animations au scroll)
-- **Intersection Observer API** – animations douces au scroll
+- **HTML5** — structure sémantique
+- **CSS3** — design, responsive, animations légères
+- **JavaScript** — interactions (menu burger, navigation, animations)
+- **Intersection Observer API** — animations douces au scroll
 
-Aucune dépendance externe ou framework n’est utilisé.
+Aucun framework ni bibliothèque externe n’est utilisé.
 
 ---
 
-## 📱 Responsive & accessibilité
+## 📱 Responsive & compatibilité
 
 Le site est entièrement responsive et optimisé pour :
 
-- Smartphones (Android / iOS)
+- Smartphones (Android & iOS)
 - Tablettes
-- Écrans desktop
+- Ordinateurs (desktop)
 
-Des bonnes pratiques d’accessibilité sont appliquées :
-- contrastes lisibles
-- animations respectant `prefers-reduced-motion`
-- navigation claire
+Une attention particulière a été portée à :
+- la compatibilité Safari iOS
+- la navigation tactile
+- l’accessibilité (lisibilité, animations non agressives)
 
 ---
 
 ## 🚀 Fonctionnalités principales
 
 - Navigation fixe avec menu burger sur mobile
-- Scroll fluide entre les sections
-- Animations d’apparition légères au scroll
-- Sections structurées : présentation, parcours, compétences, passions, contact
-- Contact par email sécurisé (pas de formulaire, pas de spam)
+- Navigation fluide entre les sections
+- Animations légères au scroll
+- Structure claire par sections :
+  - Présentation
+  - Parcours
+  - Compétences
+  - Passions
+  - Contact
+- Contact par email via lien `mailto:` (pas de formulaire, pas de spam)
 
 ---
 
 ## 📁 Structure du projet
 
 ```text
-/
-├── index.html
+Cv-en-ligne/
+├── index.html          # Page principale du site
 ├── css/
-│   └── style.css
+│   └── style.css       # Styles globaux (desktop + responsive)
 ├── js/
-│   └── script.js
+│   └── script.js       # JavaScript (menu burger, navigation, interactions)
 ├── images/
-│   └── (photos et visuels)
-└── README.md
+│   └── ...             # Images et visuels du site
+└── README.md           # Documentation du projet
+
