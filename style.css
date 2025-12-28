@@ -216,7 +216,7 @@ main {
   object-fit: cover;
 }
 
-/* ---------- About ---------- */
+/* ---------- Qui je suis ---------- */
 .about-section {
   width: 100%;
   min-height: 100vh;
@@ -256,8 +256,8 @@ main {
 }
 
 .about-photo {
-  width: 300px;
-  height: 300px;
+  max-width: 300px;
+  height: auto;
   border-radius: 50%;
   overflow: hidden;
   position: relative;
@@ -642,7 +642,7 @@ main {
 
 .contact-header h2 {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 3rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #eaf4f4;
@@ -756,14 +756,19 @@ main {
 
   /* Hero -> colonne */
   .hero {
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 0 18px;
     min-height: auto;
     text-align: left;
   }
-  .hero-left,
-  .hero-right {
+  .hero-left {
     width: 100%;
+    margin-top: 150px;
+  }
+  .hero-right {
+    position: absolute;
+    top: 90px;
+    right: 15px;
   }
   .hero-title {
     font-size: 2.5rem;
@@ -798,7 +803,7 @@ main {
     margin: 0 auto 22px;
   }
   .about-header h2 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
   .about-text-block h3 {
     font-size: 1.6rem;
@@ -820,15 +825,31 @@ main {
 }
 
 /* Très petit mobile */
-@media (max-width: 420px) {
+@media (max-width: 430px) {
   .navbar-container {
     height: 64px;
     padding: 0 14px;
+    margin: 0 30px;
+  }
+  .about-header h2,
+  .parcours-header h2,
+  .skills-header h2,
+  .passions-header h2,
+  .contact-header h2 {
+    font-size: 2rem;
   }
   .brand {
     font-size: 1.05rem;
   }
-
+  .hero-left {
+    width: 100%;
+    margin-top: 180px;
+  }
+  .hero-right {
+    position: absolute;
+    top: 70px;
+    right: 15px;
+  }
   .hero-title {
     font-size: 2.2rem;
   }
@@ -836,7 +857,13 @@ main {
     width: 240px;
   }
 }
-
+@media (max-width: 385px) {
+  .navbar-container {
+    height: 64px;
+    padding: 0 14px;
+    margin: 0px 40px 0px 10px;
+  }
+}
 /* Timeline dates (évite débordement sur mobile) */
 @media (max-width: 520px) {
   .timeline-top {
