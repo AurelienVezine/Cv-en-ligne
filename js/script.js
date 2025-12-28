@@ -1,9 +1,8 @@
 const burger = document.querySelector(".burger");
-const navLinks = document.querySelector("#nav-links");
+const navLinks = document.querySelector(".navbar-links");
+const navbarContainer = document.querySelector(".navbar-container");
 
-if (burger && navLinks) {
-  let lastTouchTime = 0;
-
+if (burger && navLinks && navbarContainer) {
   const openMenu = () => {
     burger.classList.add("is-open");
     navLinks.classList.add("is-open");
@@ -17,58 +16,30 @@ if (burger && navLinks) {
   };
 
   const toggleMenu = () => {
-    const isOpen = navLinks.classList.contains("is-open");
-    isOpen ? closeMenu() : openMenu();
+    navLinks.classList.contains("is-open") ? closeMenu() : openMenu();
   };
-  // ✅ 1) Tactile (le plus fiable sur mobile)
-  burger.addEventListener(
-    "touchstart",
-    (e) => {
-      lastTouchTime = Date.now();
-      e.preventDefault(); // évite ghost click / double déclenchement
-      e.stopPropagation();
-      toggleMenu();
-    },
-    { passive: false }
-  );
 
-  // ✅ 2) Click (desktop + fallback)
+  // ✅ Le bouton burger uniquement
   burger.addEventListener("click", (e) => {
-    // ignore si un touch vient d’arriver (évite double toggle)
-    if (Date.now() - lastTouchTime < 600) return;
     e.preventDefault();
     e.stopPropagation();
     toggleMenu();
   });
 
-  // Empêche de fermer quand on tape dans le menu
-  navLinks.addEventListener("touchstart", (e) => e.stopPropagation(), {
-    passive: true,
+  // ✅ Clique/tap en dehors => ferme
+  document.addEventListener("pointerdown", (e) => {
+    if (!navbarContainer.contains(e.target)) closeMenu();
   });
-  navLinks.addEventListener("click", (e) => e.stopPropagation());
 
-  // Ferme au clic sur un lien
+  // ✅ Clique sur un lien => laisse naviguer puis ferme
   navLinks.querySelectorAll("a").forEach((a) => {
-    a.addEventListener("click", () => closeMenu());
-    a.addEventListener("touchstart", () => closeMenu(), { passive: true });
+    a.addEventListener("click", () => {
+      // on ferme après que le navigateur ait géré l’ancre
+      setTimeout(closeMenu, 0);
+    });
   });
 
-  // Ferme si tap/clic en dehors
-  document.addEventListener(
-    "touchstart",
-    (e) => {
-      const inside = e.target.closest(".navbar-container");
-      if (!inside) closeMenu();
-    },
-    { passive: true }
-  );
-
-  document.addEventListener("click", (e) => {
-    const inside = e.target.closest(".navbar-container");
-    if (!inside) closeMenu();
-  });
-
-  // Ferme avec ESC
+  // ✅ ESC
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeMenu();
   });
