@@ -60,6 +60,7 @@ main {
   gap: 14px;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
   position: relative; /* pour le menu déroulant */
+  overflow: visible;
 }
 
 .brand {
@@ -83,6 +84,7 @@ main {
   list-style: none;
   padding: 0;
   margin: 0;
+  z-index: 1500;
 }
 
 .navbar-links a {
@@ -123,6 +125,11 @@ main {
   padding: 10px;
   flex-shrink: 0;
   flex-direction: column;
+  z-index: 2000;
+  position: relative;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  pointer-events: auto;
 }
 
 .burger-line {
