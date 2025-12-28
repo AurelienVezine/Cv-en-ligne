@@ -785,6 +785,7 @@ main {
     position: absolute;
     top: 90px;
     right: 15px;
+    pointer-events: none;
   }
   .hero-title {
     font-size: 2.5rem;
