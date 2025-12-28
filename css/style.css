@@ -43,7 +43,7 @@ main {
   width: 100%;
   display: flex;
   justify-content: center;
-  z-index: 999;
+  z-index: 1;
   padding: 0 12px;
 }
 
@@ -84,7 +84,6 @@ main {
   list-style: none;
   padding: 0;
   margin: 0;
-  z-index: 1500;
 }
 
 .navbar-links a {
@@ -125,7 +124,6 @@ main {
   padding: 10px;
   flex-shrink: 0;
   flex-direction: column;
-  z-index: 2000;
   position: relative;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
@@ -726,7 +724,6 @@ main {
   /* Navbar -> burger */
   .burger {
     display: inline-flex;
-    z-index: 2000;
     touch-action: manipulation; /* améliore les taps */
     -webkit-tap-highlight-color: transparent;
     pointer-events: auto;
@@ -747,7 +744,6 @@ main {
     border: 1px solid rgba(243, 243, 243, 0.08);
     flex-direction: column;
     gap: 0;
-    z-index: 1500;
   }
 
   .navbar-links.is-open {
