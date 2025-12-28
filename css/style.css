@@ -84,6 +84,7 @@ main {
   list-style: none;
   padding: 0;
   margin: 0;
+  z-index: 2;
 }
 
 .navbar-links a {
@@ -92,7 +93,6 @@ main {
   font-weight: 500;
   position: relative;
   transition: 0.2s;
-  z-index: 2;
 }
 
 .navbar-links a:hover {
@@ -729,7 +729,9 @@ main {
     -webkit-tap-highlight-color: transparent;
     pointer-events: auto;
   }
-
+  .navbar {
+    z-index: 1;
+  }
   .navbar-links {
     display: none; /* caché en ligne */
     position: absolute;
@@ -745,6 +747,7 @@ main {
     border: 1px solid rgba(243, 243, 243, 0.08);
     flex-direction: column;
     gap: 0;
+    z-index: 2;
   }
 
   .navbar-links.is-open {
